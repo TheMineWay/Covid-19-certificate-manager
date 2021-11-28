@@ -17,7 +17,6 @@ class ScreenCertificatesListState extends State<ScreenCertificatesList> {
         title: Text('screens.certificates_list.title'.tr()),
       ),
       body: CertificatesWorker.displayList(),
-      drawer: MenuNavigator.getDrawer(context),
     );
   }
 }

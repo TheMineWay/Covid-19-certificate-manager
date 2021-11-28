@@ -23,6 +23,9 @@
         "require_auth": "Require authentication",
         "dark_mode": "Dark mode"
       }
+    },
+    "certificate_editor": {
+      "title": "Edit certificate"
     }
   },
   "drawer": {

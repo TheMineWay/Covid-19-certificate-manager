@@ -16,7 +16,7 @@ class ScreenMainCertificateState extends State<ScreenMainCertificate> {
     return BasicScaffold(
       title: 'screens.main.title',
       drawer: MenuNavigator.getDrawer(context),
-      body: CertificatesWorker.displayDefaultCertificate(),
+      body: CertificatesWorker.displayDefaultCertificate(context),
     );
   }
 }

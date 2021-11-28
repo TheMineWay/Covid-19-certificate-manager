@@ -1,3 +1,4 @@
+import 'package:covid19_cert_manager/Kernel/EasyNav.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class CertificatesWorker {
     );
   }
 
-  static Widget displayCertificate(String? id) {
+  static Widget displayCertificate(BuildContext context, String? id) {
     if(id == null) {
       return Center(
         child: Column(
@@ -28,7 +29,9 @@ class CertificatesWorker {
               width: double.infinity,
               child: ElevatedButton(
                 child: Text("main.content.add_first_cert".tr()),
-                onPressed: () {},
+                onPressed: () {
+                  EasyNav.navigate(path: '/certificate_editor', context: context, enableBack: true);
+                },
               ),
             )
           ],
@@ -40,8 +43,8 @@ class CertificatesWorker {
     }
   }
 
-  static Widget displayDefaultCertificate() {
-    return displayCertificate(defaultCertificate());
+  static Widget displayDefaultCertificate(BuildContext context) {
+    return displayCertificate(context, defaultCertificate());
   }
 
   // Backstage

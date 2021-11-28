@@ -6,15 +6,8 @@ class MenuNavigator {
     return ListView(
       children: [
         ListTile(
-          title: Text('drawer.options.main'),
-          leading: Icon(Icons.home),
-          onTap: () => {
-            EasyNav.navigate(path: '/main', context: context, enableBack: false)
-          },
-        ),
-        ListTile(
           title: Text('drawer.options.certificates'),
-          leading: Icon(Icons.badge),
+          leading: Icon(Icons.list),
           onTap: () => {
             EasyNav.navigate(path: '/certificates_list', context: context, enableBack: false)
           },

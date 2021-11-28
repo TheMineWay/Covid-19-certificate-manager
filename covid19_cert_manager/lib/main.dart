@@ -2,6 +2,7 @@ import 'package:covid19_cert_manager/Kernel/config.dart';
 import 'package:covid19_cert_manager/Screens/MainCertificate.dart';
 import 'package:covid19_cert_manager/Screens/MainLoading.dart';
 import 'package:covid19_cert_manager/Screens/ScreenAuth.dart';
+import 'package:covid19_cert_manager/Screens/ScreenCertificateEditor.dart';
 import 'package:covid19_cert_manager/Screens/ScreenCertificatesList.dart';
 import 'package:dynamic_themes/dynamic_themes.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
             '/certificates_list': (context) => ScreenCertificatesList(),
             '/settings': (context) => ScreenSettings(),
             '/main': (context) => ScreenMainCertificate(),
+            '/certificate_editor': (context) => ScreenCertificateEditor(true),
           },
         );
       },
