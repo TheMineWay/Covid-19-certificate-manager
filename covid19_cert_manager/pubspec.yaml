@@ -33,6 +33,10 @@ dependencies:
   local_auth: ^1.1.8
   easy_localization: ^3.0.0
   dynamic_themes: ^1.1.0
+  qr_flutter: ^4.0.0
+  qr_code_scanner:
+    git:
+      url: git://github.com/juliuscanute/qr_code_scanner.git
 
 
   # The following adds the Cupertino Icons font to your application.
