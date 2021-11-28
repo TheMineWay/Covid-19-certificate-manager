@@ -58,6 +58,13 @@
             </list>
           </value>
         </entry>
+        <entry key="dynamic_themes">
+          <value>
+            <list>
+              <option value="D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/dynamic_themes-1.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="easy_localization">
           <value>
             <list>
@@ -370,6 +377,7 @@
       <root url="file://D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0/lib" />
       <root url="file://D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib" />
       <root url="file://D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4/lib" />
+      <root url="file://D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/dynamic_themes-1.1.0/lib" />
       <root url="file://D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/easy_localization-3.0.0/lib" />
       <root url="file://D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/easy_logger-0.0.2/lib" />
       <root url="file://D:/Flutter SDK/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />

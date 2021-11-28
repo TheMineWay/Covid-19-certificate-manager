@@ -13,7 +13,8 @@
     "settings": {
       "title": "Settings",
       "options": {
-        "require_auth": "Require authentication"
+        "require_auth": "Require authentication",
+        "dark_mode": "Dark mode"
       }
     }
   },

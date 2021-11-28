@@ -32,6 +32,7 @@ dependencies:
   shared_preferences: ^2.0.9
   local_auth: ^1.1.8
   easy_localization: ^3.0.0
+  dynamic_themes: ^1.1.0
 
 
   # The following adds the Cupertino Icons font to your application.

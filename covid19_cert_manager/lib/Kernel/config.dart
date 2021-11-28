@@ -21,4 +21,12 @@ class AppConfig {
   void setBiometricProtection(bool enabled) {
     sharedPreferences.setBool("hasBiometricProtection", enabled);
   }
+
+  bool enabledDarkMode() {
+    return sharedPreferences.getBool("darkModeEnabled") ?? false;
+  }
+
+  void setDarkMode(bool enabled) {
+    sharedPreferences.setBool("darkModeEnabled", enabled);
+  }
 }
