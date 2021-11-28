@@ -14,6 +14,7 @@ class ScreenMainLoadingState extends State<ScreenMainLoading> {
   @override
   Widget build(BuildContext context) {
     return BasicScaffold(
+      title: 'app_generics.title',
         body: Center(
           child: CircularProgressIndicator(),
         )
@@ -36,7 +37,7 @@ class ScreenMainLoadingState extends State<ScreenMainLoading> {
       EasyNav.navigate(path: '/auth', context: context);
     } else {
       // No need of authentication
-      EasyNav.navigate(path: '/certificates_list', context: context);
+      EasyNav.navigate(path: '/main', context: context);
     }
   }
 }

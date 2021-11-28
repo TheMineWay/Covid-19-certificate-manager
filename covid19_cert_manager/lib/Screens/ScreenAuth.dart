@@ -14,6 +14,7 @@ class ScreenAuthState extends State<ScreenAuth> {
   @override
   Widget build(BuildContext context) {
     return BasicScaffold(
+      title: 'app_generics.title',
       body: Center(
         child: Column(
           children: [
@@ -40,7 +41,7 @@ class ScreenAuthState extends State<ScreenAuth> {
 
   Future<void> auth() async {
     if(await AuthManager.isAuthorised()) {
-      EasyNav.navigate(path: '/certificates_list', context: context);
+      EasyNav.navigate(path: '/main', context: context);
     }
   }
 }

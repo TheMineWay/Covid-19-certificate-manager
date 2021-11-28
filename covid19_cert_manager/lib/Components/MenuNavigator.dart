@@ -6,12 +6,26 @@ class MenuNavigator {
     return ListView(
       children: [
         ListTile(
+          title: Text('drawer.options.main'),
+          leading: Icon(Icons.home),
+          onTap: () => {
+            EasyNav.navigate(path: '/main', context: context, enableBack: false)
+          },
+        ),
+        ListTile(
+          title: Text('drawer.options.certificates'),
+          leading: Icon(Icons.badge),
+          onTap: () => {
+            EasyNav.navigate(path: '/certificates_list', context: context, enableBack: false)
+          },
+        ),
+        ListTile(
           title: Text('drawer.options.settings'),
           leading: Icon(Icons.settings),
           onTap: () => {
             EasyNav.navigate(path: '/settings', context: context, enableBack: true)
           },
-        )
+        ),
       ],
     );
   }

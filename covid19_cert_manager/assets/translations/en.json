@@ -10,6 +10,13 @@
     "certificates_list": {
       "title": "Certificates list"
     },
+    "main": {
+      "title": "Main certificate",
+      "content": {
+        "empty": "There is no default certificate"
+      },
+      "add_first_cert": "Add your first certificate"
+    },
     "settings": {
       "title": "Settings",
       "options": {
@@ -20,7 +27,9 @@
   },
   "drawer": {
     "options": {
-      "settings": "Settings"
+      "settings": "Settings",
+      "certificates": "All certificates",
+      "main": "Main certificate"
     }
   }
 }

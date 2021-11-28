@@ -1,23 +1,22 @@
+import 'package:covid19_cert_manager/Components/BasicScaffold.dart';
 import 'package:covid19_cert_manager/Components/MenuNavigator.dart';
 import 'package:covid19_cert_manager/Kernel/CertificatesWorker.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ScreenCertificatesList extends StatefulWidget {
+class ScreenMainCertificate extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => ScreenCertificatesListState();
+  State<StatefulWidget> createState() => ScreenMainCertificateState();
 }
 
-class ScreenCertificatesListState extends State<ScreenCertificatesList> {
+class ScreenMainCertificateState extends State<ScreenMainCertificate> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('screens.certificates_list.title'.tr()),
-      ),
-      body: CertificatesWorker.displayList(),
+    return BasicScaffold(
+      title: 'screens.main.title',
       drawer: MenuNavigator.getDrawer(context),
+      body: CertificatesWorker.displayDefaultCertificate(),
     );
   }
 }

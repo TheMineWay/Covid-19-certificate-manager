@@ -1,4 +1,5 @@
 import 'package:covid19_cert_manager/Kernel/config.dart';
+import 'package:covid19_cert_manager/Screens/MainCertificate.dart';
 import 'package:covid19_cert_manager/Screens/MainLoading.dart';
 import 'package:covid19_cert_manager/Screens/ScreenAuth.dart';
 import 'package:covid19_cert_manager/Screens/ScreenCertificatesList.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
             '/auth': (context) => ScreenAuth(),
             '/certificates_list': (context) => ScreenCertificatesList(),
             '/settings': (context) => ScreenSettings(),
+            '/main': (context) => ScreenMainCertificate(),
           },
         );
       },
