@@ -20,8 +20,6 @@ void main() async {
       child: MyApp(),
       supportedLocales: [
         Locale('en'),
-        Locale('es'),
-        Locale('ca')
       ],
       fallbackLocale: Locale('en'),
       saveLocale: true,
