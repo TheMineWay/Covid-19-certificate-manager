@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:covid19_cert_manager/Components/Certificate.dart';
 import 'package:covid19_cert_manager/Kernel/EasyNav.dart';
 import 'package:covid19_cert_manager/Kernel/config.dart';
+import 'package:covid19_cert_manager/Screens/ScreenCertificatesList.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +20,31 @@ class CertificatesWorker {
     certificates = jsonDecode(base);
   }
 
-  static ListView displayList() {
+  static ListView displayList(BuildContext context) {
+    print(certificates.keys);
+
+    SharedPreferences sp = appConfig.sharedPreferences;
+
     return ListView(
-      children: [
-        ListTile(
-          title: Text("Certificado 1"),
-          leading: Icon(Icons.account_circle),
-        ),
-      ],
+      children: certificates.keys.map((key) {
+        return ListTile(
+          title: Text(key),
+          subtitle: sp.getString("main_certificate") == key ? Text('screens.certificate_list.item.main_cert'.tr()) : null,
+          trailing: PopupMenuButton(
+            icon: Icon(Icons.more_vert),
+            itemBuilder: (BuildContext context) => [
+              PopupMenuItem(
+                child: Text("screens.certificate_list.actions.remove".tr()),
+                onTap: () {
+                  delete(key);
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => ScreenCertificatesList()));
+                },
+              )
+            ],
+          )
+        );
+      }).toList()
     );
   }
 
@@ -43,7 +61,7 @@ class CertificatesWorker {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                child: Text("main.content.add_first_cert".tr()),
+                child: Text("screens.main.add_first_cert".tr()),
                 onPressed: () {
                   EasyNav.navigate(path: '/certificate_create', context: context, enableBack: true);
                 },
@@ -72,6 +90,8 @@ class CertificatesWorker {
   }
 
   static bool save(String code, String name) {
+    if(code == "" || name == "") return false;
+
     SharedPreferences sp = appConfig.sharedPreferences;
 
     if(certificates.containsKey(name)) return false;
@@ -82,6 +102,15 @@ class CertificatesWorker {
     sp.setString("certificates", jsonEncode(certificates));
 
     return true;
+  }
+
+  static void delete(String key) {
+    SharedPreferences sp = appConfig.sharedPreferences;
+    if(!certificates.containsKey(key)) return;
+
+    certificates.remove(key);
+
+    sp.setString("certificates", jsonEncode(certificates));
   }
 
   static void setAsMain(String value) {

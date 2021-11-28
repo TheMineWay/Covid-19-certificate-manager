@@ -1,11 +1,7 @@
-// Used to edit and add certificates conditionally
-
-import 'package:covid19_cert_manager/Components/BasicScaffold.dart';
 import 'package:covid19_cert_manager/Screens/ScreenCertificateEdit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 
 class ScreenCertificateCreate extends StatefulWidget {
   @override

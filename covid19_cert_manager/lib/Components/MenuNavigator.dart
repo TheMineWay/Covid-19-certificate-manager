@@ -1,4 +1,5 @@
 import 'package:covid19_cert_manager/Kernel/EasyNav.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class MenuNavigator {
@@ -6,14 +7,14 @@ class MenuNavigator {
     return ListView(
       children: [
         ListTile(
-          title: Text('drawer.options.certificates'),
+          title: Text('drawer.options.certificates'.tr()),
           leading: Icon(Icons.list),
           onTap: () => {
             EasyNav.navigate(path: '/certificates_list', context: context, enableBack: false)
           },
         ),
         ListTile(
-          title: Text('drawer.options.settings'),
+          title: Text('drawer.options.settings'.tr()),
           leading: Icon(Icons.settings),
           onTap: () => {
             EasyNav.navigate(path: '/settings', context: context, enableBack: true)

@@ -48,10 +48,9 @@ class ScreenCertificateEditState extends State<ScreenCertificateEdit> {
                     bool saved = CertificatesWorker.save(code ?? "", nameController.value.text ?? "");
                     if(saved) {
                       Navigator.pop(context);
-                      EasyNav.navigate(context: context, path: '/main');
                     }
                   },
-                  child: Text("sreens.certificate_editor.fields.save".tr())
+                  child: Text("screens.certificate_editor.fields.save".tr())
               ),
               width: double.infinity,
             )
