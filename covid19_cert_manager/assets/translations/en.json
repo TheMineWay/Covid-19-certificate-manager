@@ -1,0 +1,25 @@
+{
+  "app_generics": {
+    "title": "Covid-19 certificate manager"
+  },
+  "auth": {
+    "reason": "Authenticate for security reasons",
+    "authenticate": "Authenticate"
+  },
+  "screens": {
+    "certificates_list": {
+      "title": "Certificates list"
+    },
+    "settings": {
+      "title": "Settings",
+      "options": {
+        "require_auth": "Require authentication"
+      }
+    }
+  },
+  "drawer": {
+    "options": {
+      "settings": "Settings"
+    }
+  }
+}
