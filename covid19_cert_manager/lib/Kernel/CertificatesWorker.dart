@@ -30,7 +30,7 @@ class CertificatesWorker {
               child: ElevatedButton(
                 child: Text("main.content.add_first_cert".tr()),
                 onPressed: () {
-                  EasyNav.navigate(path: '/certificate_editor', context: context, enableBack: true);
+                  EasyNav.navigate(path: '/certificate_create', context: context, enableBack: true);
                 },
               ),
             )
