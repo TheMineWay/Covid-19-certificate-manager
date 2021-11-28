@@ -11,7 +11,7 @@ class Certificate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        QrImage(data: qrCode),
+        QrImage(data: qrCode, backgroundColor: Color.fromARGB(255, 255, 255, 255)),
         Padding(
           padding: EdgeInsets.all(20),
           child: Text(

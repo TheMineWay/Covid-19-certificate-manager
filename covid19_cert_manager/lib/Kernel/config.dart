@@ -29,4 +29,12 @@ class AppConfig {
   void setDarkMode(bool enabled) {
     sharedPreferences.setBool("darkModeEnabled", enabled);
   }
+
+  void setLanguage(String language) {
+    sharedPreferences.setString("language", language);
+  }
+
+  String getLanguage() {
+    return sharedPreferences.getString("language") ?? "en";
+  }
 }

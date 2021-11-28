@@ -20,6 +20,13 @@ class MenuNavigator {
             EasyNav.navigate(path: '/settings', context: context, enableBack: true)
           },
         ),
+        ListTile(
+          title: Text('drawer.options.info'.tr()),
+          leading: Icon(Icons.info),
+          onTap: () => {
+            EasyNav.navigate(path: '/info', context: context, enableBack: true)
+          },
+        ),
       ],
     );
   }

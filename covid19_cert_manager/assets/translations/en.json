@@ -21,8 +21,15 @@
       "title": "Settings",
       "options": {
         "require_auth": "Require authentication",
-        "dark_mode": "Dark mode"
-      }
+        "dark_mode": "Dark mode",
+        "language": "Language"
+      },
+      "languages": {
+        "en": "English",
+        "ca": "Catalan",
+        "es": "Spanish"
+      },
+      "ok": "Ok"
     },
     "certificate_editor": {
       "title": "Edit certificate",
@@ -36,15 +43,23 @@
         "main_cert": "Main certificate"
       },
       "actions": {
-        "remove": "Delete"
+        "remove": "Delete",
+        "mark_as_main": "Mark as main"
       }
+    },
+    "info": {
+      "title": "Information",
+      "content": {
+        "p1": "This application was made by Joel Campos (TheMineWay) as a non official Covid-19 passport."
+      },
+      "repo_button": "GitHub repository"
     }
   },
   "drawer": {
     "options": {
       "settings": "Settings",
       "certificates": "All certificates",
-      "main": "Main certificate"
+      "info": "Information"
     }
   }
 }

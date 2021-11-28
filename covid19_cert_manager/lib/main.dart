@@ -5,6 +5,7 @@ import 'package:covid19_cert_manager/Screens/ScreenAuth.dart';
 import 'package:covid19_cert_manager/Screens/ScreenCertificateCreate.dart';
 import 'package:covid19_cert_manager/Screens/ScreenCertificateEdit.dart';
 import 'package:covid19_cert_manager/Screens/ScreenCertificatesList.dart';
+import 'package:covid19_cert_manager/Screens/ScreenInfo.dart';
 import 'package:dynamic_themes/dynamic_themes.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,9 @@ void main() async {
   runApp(EasyLocalization(
       child: MyApp(),
       supportedLocales: [
-        Locale('en')
+        Locale('en'),
+        Locale('es'),
+        Locale('ca')
       ],
       fallbackLocale: Locale('en'),
       saveLocale: true,
@@ -49,6 +52,7 @@ class MyApp extends StatelessWidget {
             '/settings': (context) => ScreenSettings(),
             '/main': (context) => ScreenMainCertificate(),
             '/certificate_create': (context) => ScreenCertificateCreate(),
+            '/info': (context) => ScreenInfo(),
           },
         );
       },

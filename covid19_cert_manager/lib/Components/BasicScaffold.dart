@@ -24,6 +24,7 @@ class BasicScaffoldState extends State<BasicScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(title.tr()),
         ),

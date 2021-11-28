@@ -21,8 +21,6 @@ class CertificatesWorker {
   }
 
   static ListView displayList(BuildContext context) {
-    print(certificates.keys);
-
     SharedPreferences sp = appConfig.sharedPreferences;
 
     return ListView(
@@ -38,7 +36,13 @@ class CertificatesWorker {
                 onTap: () {
                   delete(key);
                   Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => ScreenCertificatesList()));
+                },
+              ),
+              PopupMenuItem(
+                child: Text("screens.certificate_list.actions.mark_as_main".tr()),
+                onTap: () {
+                  setAsMain(key);
+                  Navigator.of(context).pop();
                 },
               )
             ],
@@ -109,6 +113,9 @@ class CertificatesWorker {
     if(!certificates.containsKey(key)) return;
 
     certificates.remove(key);
+    if(key == sp.getString("main_certificate") && certificates.keys.length >= 1) {
+      setAsMain(certificates.keys.first);
+    }
 
     sp.setString("certificates", jsonEncode(certificates));
   }

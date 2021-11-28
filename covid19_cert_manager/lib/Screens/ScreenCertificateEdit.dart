@@ -31,8 +31,12 @@ class ScreenCertificateEditState extends State<ScreenCertificateEdit> {
             SizedBox(
               child: QrImage(
                 data: code ?? "",
+                backgroundColor: Color.fromARGB(255, 255, 255, 255),
               ),
               width: MediaQuery.of(context).size.width * 0.75,
+            ),
+            SizedBox(
+              height: 20,
             ),
             TextField(
               decoration: InputDecoration(
