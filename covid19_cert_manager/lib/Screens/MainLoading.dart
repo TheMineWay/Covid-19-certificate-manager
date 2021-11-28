@@ -1,4 +1,5 @@
 import 'package:covid19_cert_manager/Components/BasicScaffold.dart';
+import 'package:covid19_cert_manager/Kernel/CertificatesWorker.dart';
 import 'package:covid19_cert_manager/Kernel/EasyNav.dart';
 import 'package:covid19_cert_manager/Kernel/config.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,7 +30,8 @@ class ScreenMainLoadingState extends State<ScreenMainLoading> {
     // Load app basics
 
     // App config
-    await AppConfig.getInstance();
+    AppConfig appConfig = await AppConfig.getInstance();
+    CertificatesWorker.init(appConfig);
 
     // Change screen
     if(AppConfig.config!.hasBiometricProtection()) {

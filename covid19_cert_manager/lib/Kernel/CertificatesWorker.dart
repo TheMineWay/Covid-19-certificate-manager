@@ -1,9 +1,24 @@
+import 'dart:convert';
+
+import 'package:covid19_cert_manager/Components/Certificate.dart';
 import 'package:covid19_cert_manager/Kernel/EasyNav.dart';
+import 'package:covid19_cert_manager/Kernel/config.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CertificatesWorker {
+  static late AppConfig appConfig;
+  static Map<String, dynamic> certificates = {};
+
+  static void init(AppConfig ac) {
+    appConfig = ac;
+    String base = ac.sharedPreferences.getString("certificates") ?? "{}";
+    print(base);
+    certificates = jsonDecode(base);
+  }
+
   static ListView displayList() {
     return ListView(
       children: [
@@ -16,7 +31,7 @@ class CertificatesWorker {
   }
 
   static Widget displayCertificate(BuildContext context, String? id) {
-    if(id == null) {
+    if(id == null || !certificates.containsKey(id)) {
       return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +54,8 @@ class CertificatesWorker {
       );
     }
     else {
-      return Text("Certificado");
+      String code = certificates[id];
+      return Certificate(qrCode: code, name: id);
     }
   }
 
@@ -49,11 +65,27 @@ class CertificatesWorker {
 
   // Backstage
 
-  static List<String> certificates() {
-    return [];
+  static String? defaultCertificate() {
+    SharedPreferences sp = appConfig.sharedPreferences;
+
+    return sp.getString("main_certificate");
   }
 
-  static String? defaultCertificate() {
-    return null;
+  static bool save(String code, String name) {
+    SharedPreferences sp = appConfig.sharedPreferences;
+
+    if(certificates.containsKey(name)) return false;
+
+    if(certificates.keys.length <= 0) setAsMain(name);
+    certificates[name] = code;
+
+    sp.setString("certificates", jsonEncode(certificates));
+
+    return true;
+  }
+
+  static void setAsMain(String value) {
+    SharedPreferences sp = appConfig.sharedPreferences;
+    sp.setString("main_certificate", value);
   }
 }

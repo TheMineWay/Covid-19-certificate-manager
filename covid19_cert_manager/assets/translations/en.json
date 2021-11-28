@@ -25,7 +25,11 @@
       }
     },
     "certificate_editor": {
-      "title": "Edit certificate"
+      "title": "Edit certificate",
+      "fields": {
+        "name": "Name",
+        "save": "Save"
+      }
     }
   },
   "drawer": {
